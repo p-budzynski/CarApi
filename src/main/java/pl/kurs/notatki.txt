@@ -1,0 +1,13 @@
+Praca domowa:
+V - Dorobic walidacje dla pol, customowe walidatory dla pesel, mozna zrobic walidator dla marek aut, np. audi nie przyjmujemy
+V - Dodatkowe pola
+(prawie) - CRUD dla owner/car - tez z walidacja
+V - Car powinien miec encje onetoone z silnikiem, przy czym tutaj juz mozemy tworzyc cara z silnikiem
+V - Przerobic Owner/Car tak zeby Owner mogl miec kilka aut
+V - Liquibase
+
+
+Logowanie do pliku w formacie ktory zdefiniujesz, yyyy-dd-mm i komunikat, dodatkowo mozna pomyslec o dorzuceniu informacji z ktorej klasy leci log
+
+
+Testy jednostkowe i integracyjne, nie przesadzaj, pokrycie 80% najwazniejszego kodu wystarczy

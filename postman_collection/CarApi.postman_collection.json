@@ -1,0 +1,414 @@
+{
+  "info": {
+    "_postman_id": "319c65ca-fb93-4dc8-bd57-2506b459fb56",
+    "name": "CarApi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48853823"
+  },
+  "item": [
+    {
+      "name": "engines",
+      "item": [
+        {
+          "name": "get engine by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/engines/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "engines",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add engine",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"producer\": \"BMW\",\r\n    \"model\": \"B58\",\r\n    \"capacity\": 2998,\r\n    \"horsepower\": 374,\r\n    \"torque\": 560,\r\n    \"engineNumber\": \"ENG0000007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/engines",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "engines"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete engine by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/engines/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "engines",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update engine",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"horsepower\": 150\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/engines/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "engines",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "cars",
+      "item": [
+        {
+          "name": "get car by id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"producer\": \"BMW\",\r\n    \"model\": \"B58\",\r\n    \"capacity\": 2998,\r\n    \"horsepower\": 374,\r\n    \"torque\": 560,\r\n    \"engineNumber\": \"ENG0000007\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/cars/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "cars",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add car",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"producer\": \"BMW\",\r\n    \"model\": \"3 Series\",\r\n    \"yearOfProduction\": 2020,\r\n    \"registrationNumber\": \"WA1234C\",\r\n    \"vinNumber\": \"WBA3B5C57EP544356\",\r\n    \"color\": \"Black\",\r\n    \"engineId\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/cars",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "assign engine to car",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Jan\",\r\n    \"lastName\": \"Kowalski\",\r\n    \"phoneNumber\": \"500600700\",\r\n    \"email\": \"jan.kowalski@mail.com\",\r\n    \"pesel\": \"86080302579\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/cars/6/engines/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "cars",
+                "6",
+                "engines",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete car by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/cars/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "cars",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update car",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"producer\": \"ford\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/cars/10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "cars",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "owners",
+      "item": [
+        {
+          "name": "get owner by id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Jan\",\r\n    \"lastName\": \"Kowalski\",\r\n    \"phoneNumber\": \"500600700\",\r\n    \"email\": \"jan.kowalski@mail.com\",\r\n    \"pesel\": \"86080302579\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/owners/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "owners",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add owner",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Jan\",\r\n    \"lastName\": \"Kowalski\",\r\n    \"phoneNumber\": \"500600700\",\r\n    \"email\": \"jan.kowalski@mail.com\",\r\n    \"pesel\": \"86080302579\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/owners",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "owners"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "assign car to owner",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Jan\",\r\n    \"lastName\": \"Kowalski\",\r\n    \"phoneNumber\": \"500600700\",\r\n    \"email\": \"jan.kowalski@mail.com\",\r\n    \"pesel\": \"86080302579\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/owners/1/cars/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "owners",
+                "1",
+                "cars",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete owner by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Jan\",\r\n    \"lastName\": \"Kowalski\",\r\n    \"phoneNumber\": \"500600700\",\r\n    \"email\": \"jan.kowalski@mail.com\",\r\n    \"pesel\": \"86080302579\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/owners/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "owners",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update owner",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Błażej\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/owners/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "owners",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get owner cars",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Błażej\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/owners/2/cars",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "owners",
+                "2",
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
