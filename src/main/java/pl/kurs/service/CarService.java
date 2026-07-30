@@ -38,10 +38,10 @@ public class CarService {
         return savedCar;
     }
 
-    public Car getCarById(Long id) {
+    public Car getCarByIdWithEngine(Long id) {
         log.info("Searching for car with id={}", id);
 
-        return carRepository.findById(id)
+        return carRepository.findByIdWithEngine(id)
                 .orElseThrow(() -> {
                     log.warn("Car with id={} does not exist", id);
                     return new CarNotFoundException("Car does not exist");
@@ -59,6 +59,16 @@ public class CarService {
         carRepository.save(car);
 
         log.info("Engine with id={} successfully assigned to car with id={}", engineId, id);
+    }
+
+    public Car getCarById(Long id) {
+        log.info("Searching for car with id={}", id);
+
+        return carRepository.findById(id)
+                .orElseThrow(() -> {
+                    log.warn("Car with id={} does not exist", id);
+                    return new CarNotFoundException("Car does not exist");
+                });
     }
 
     @Transactional

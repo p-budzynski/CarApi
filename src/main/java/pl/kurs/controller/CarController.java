@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import pl.kurs.dto.CarDto;
+import pl.kurs.dto.CarRequestDto;
 import pl.kurs.entity.Car;
 import pl.kurs.mapper.CarMapper;
 import pl.kurs.service.CarService;
@@ -23,17 +24,17 @@ public class CarController {
     private final CarMapper carMapper;
 
     @GetMapping("/{id}")
-    public ResponseEntity<CarDto> getCarById(@PathVariable("id") @Min(value = 1, message = "ID must be greater than zero!") Long id) {
-        Car car = carService.getCarById(id);
-        return ResponseEntity.ok(carMapper.entityToDto(car));
+    public ResponseEntity<CarRequestDto> getCarById(@PathVariable("id") @Min(value = 1, message = "ID must be greater than zero!") Long id) {
+        Car car = carService.getCarByIdWithEngine(id);
+        return ResponseEntity.ok(carMapper.entityToRequestDto(car));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CarDto addCar(@RequestBody @Validated(Create.class) CarDto carDto) {
+    public CarRequestDto addCar(@RequestBody @Validated(Create.class) CarDto carDto) {
         Car car = carMapper.dtoToEntity(carDto);
         Car addedCar = carService.addCar(car, carDto.getEngineId());
-        return carMapper.entityToDto(addedCar);
+        return carMapper.entityToRequestDto(addedCar);
     }
 
     @PutMapping("/{id}/engines/{engineId}")
@@ -44,10 +45,10 @@ public class CarController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<CarDto> updateCar(@PathVariable("id") @Min(value = 1, message = "ID must be greater than zero!") Long id,
+    public ResponseEntity<CarRequestDto> updateCar(@PathVariable("id") @Min(value = 1, message = "ID must be greater than zero!") Long id,
                                             @RequestBody @Validated(Update.class) CarDto carDto) {
         Car updatedCar = carService.updateCar(id, carDto);
-        return ResponseEntity.ok(carMapper.entityToDto(updatedCar));
+        return ResponseEntity.ok(carMapper.entityToRequestDto(updatedCar));
     }
 
     @DeleteMapping("/{id}")

@@ -35,7 +35,7 @@ public class EngineController {
     public EngineDto addEngine(@RequestBody @Validated(Create.class) EngineDto engineDto) {
         Engine engine = engineMapper.dtoToEntity(engineDto);
         Engine addedEngine = engineService.addedEngine(engine);
-        return engineMapper.entityToDto(engine);
+        return engineMapper.entityToDto(addedEngine);
     }
 
     @PatchMapping("/{id}")

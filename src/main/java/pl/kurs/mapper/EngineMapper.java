@@ -7,7 +7,6 @@ import pl.kurs.entity.Engine;
 @Mapper(componentModel = "spring")
 public interface EngineMapper {
 
-
     EngineDto entityToDto(Engine engine);
 
     @Mapping(target = "id", ignore = true)
